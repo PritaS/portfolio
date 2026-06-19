@@ -245,6 +245,64 @@ section{padding:6rem 3rem}
 .venture-subtitle{font-size:0.75rem;color:var(--teal-pale);font-style:italic;font-family:var(--serif);margin-bottom:0.65rem}
 .venture-desc{font-size:0.8rem;color:var(--slate-pale);line-height:1.72}
 
+.shop{background:var(--white)}
+.shop-inner{max-width:1200px;margin:0 auto}
+.shop-header{margin-bottom:3rem}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;margin-bottom:2rem}
+.shop-card{
+  background:var(--teal-wash);border:1px solid var(--teal-pale);
+  padding:0;overflow:hidden;display:flex;flex-direction:column;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.shop-card:hover{border-color:var(--teal-muted);transform:translateY(-3px)}
+.shop-card-banner{
+  height:90px;display:flex;align-items:center;justify-content:center;
+  font-size:2.2rem;position:relative;overflow:hidden;
+}
+.shop-card-banner.sc-mom{background:linear-gradient(135deg,#0B4D4A,#1A7A75)}
+.shop-card-banner.sc-teacher{background:linear-gradient(135deg,#1a3a6b,#0d2547)}
+.shop-card-banner.sc-student{background:linear-gradient(135deg,#3a1a6b,#250d47)}
+.shop-card-banner.sc-bundle{background:linear-gradient(135deg,#0B4D4A 0%,#1a3a6b 50%,#3a1a6b 100%)}
+.shop-card-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
+.shop-card-badge{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--teal-soft);margin-bottom:0.5rem;
+}
+.shop-card-title{font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--text-dark);margin-bottom:0.5rem;line-height:1.3}
+.shop-card-desc{font-size:0.8rem;color:var(--slate);line-height:1.6;margin-bottom:1.25rem;flex:1}
+.shop-card-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.shop-card-price{font-family:var(--serif);font-size:1.4rem;color:var(--teal-deep);font-weight:500}
+.shop-card-price span{font-size:0.75rem;color:var(--slate-light);font-family:var(--sans);text-decoration:line-through;margin-right:0.4rem}
+.shop-card-btn{
+  font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--white);background:var(--teal-soft);
+  padding:0.6rem 1.1rem;text-decoration:none;transition:background 0.2s;white-space:nowrap;
+}
+.shop-card-btn:hover{background:var(--teal-muted)}
+.shop-bundle-card{
+  grid-column:1 / -1;
+  background:linear-gradient(135deg,var(--teal-deep),var(--teal-mid));
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;
+  padding:1.75rem 2rem;border:none;
+}
+.shop-bundle-icon{font-size:2.5rem}
+.shop-bundle-title{font-family:var(--serif);font-size:1.3rem;color:var(--white);margin-bottom:0.3rem}
+.shop-bundle-desc{font-size:0.8rem;color:var(--slate-pale)}
+.shop-bundle-price{text-align:right}
+.shop-bundle-price-num{font-family:var(--serif);font-size:1.6rem;color:var(--teal-pale);display:block}
+.shop-bundle-price-old{font-size:0.7rem;color:var(--slate-pale);text-decoration:line-through}
+.shop-bundle-btn{
+  display:inline-block;margin-top:0.5rem;
+  font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--teal-deep);background:var(--silver-light);
+  padding:0.65rem 1.3rem;text-decoration:none;transition:background 0.2s;
+}
+.shop-bundle-btn:hover{background:var(--white)}
+@media(max-width:768px){
+  .shop-bundle-card{grid-template-columns:1fr;text-align:center;gap:1rem}
+  .shop-bundle-price{text-align:center}
+}
+
 .wevolve{background:var(--silver-pale);display:grid;grid-template-columns:1fr 1fr;min-height:480px}
 .wevolve-left{
   background:var(--teal-deep);padding:5rem 4rem;
@@ -327,6 +385,7 @@ footer{
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#shop">Shop</a></li>
     <li><a href="#wevolve">wEvolve</a></li>
     <li><a href="#contact" class="nav-cta">Work Together</a></li>
   </ul>
@@ -647,6 +706,66 @@ footer{
         <div class="venture-title">Pronto</div>
         <div class="venture-subtitle">Yelp Lead-Response Automation</div>
         <p class="venture-desc">AI-powered tool for owner-operated small businesses to auto-respond to inbound Yelp leads. Landing page live. Yelp Leads API integration underway. Built for groomers, trades, and event planners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="shop">
+  <div class="shop-inner">
+    <div class="shop-header fade-up">
+      <div class="section-label">AI Made Simple Series</div>
+      <h2 class="section-heading">Cheatsheets that actually <em>save you time</em></h2>
+      <p class="section-sub">50 advanced, ready-to-use ChatGPT prompts per guide — engineered with real context, not generic advice. Instant PDF download.</p>
+    </div>
+    <div class="shop-grid fade-up">
+      <div class="shop-card">
+        <div class="shop-card-banner sc-mom">🤱</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 1 · For Moms</div>
+          <div class="shop-card-title">The Busy Mom's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for meal planning, homework help, bedtime stories, tough conversations, and getting 2 hours back a day.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$9</div>
+            <a href="https://pritasharma.gumroad.com/l/titmxx" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-teacher">🍎</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 2 · For Teachers</div>
+          <div class="shop-card-title">The Teacher's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for lesson plans, differentiation, report cards, parent emails, and classroom management.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$9</div>
+            <a href="https://pritasharma.gumroad.com/l/uxdyd" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-student">🎓</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 3 · For Students</div>
+          <div class="shop-card-title">The Student's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for essay writing, exam prep, study systems, professor emails, and college applications.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$9</div>
+            <a href="https://pritasharma.gumroad.com/l/svlmxd" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-bundle-card">
+        <div class="shop-bundle-icon">📦</div>
+        <div>
+          <div class="shop-bundle-title">The Complete Bundle — All 3 Cheatsheets</div>
+          <div class="shop-bundle-desc">150 prompts total. Get all three guides together and save.</div>
+        </div>
+        <div class="shop-bundle-price">
+          <span class="shop-bundle-price-old">$27</span>
+          <span class="shop-bundle-price-num">$19</span>
+          <a href="https://pritasharma.gumroad.com/l/cpscg" target="_blank" rel="noopener" class="shop-bundle-btn">Get the Bundle →</a>
+        </div>
       </div>
     </div>
   </div>
