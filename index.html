@@ -262,6 +262,11 @@ section{padding:6rem 3rem}
 .shop-card-banner.sc-mom{background:linear-gradient(135deg,#0B4D4A,#1A7A75)}
 .shop-card-banner.sc-teacher{background:linear-gradient(135deg,#1a3a6b,#0d2547)}
 .shop-card-banner.sc-student{background:linear-gradient(135deg,#3a1a6b,#250d47)}
+.shop-card-banner.sc-jobseeker{background:linear-gradient(135deg,#9a4a1a,#6b2e0d)}
+.shop-card-banner.sc-smallbiz{background:linear-gradient(135deg,#2d4a1a,#1a2e0d)}
+.shop-card-banner.sc-manager{background:linear-gradient(135deg,#5a1a4a,#3d0d31)}
+.shop-card-banner.sc-senior{background:linear-gradient(135deg,#a8552e,#4d240f)}
+.shop-card-banner.sc-realestate{background:linear-gradient(135deg,#1a2438,#080b14)}
 .shop-card-banner.sc-bundle{background:linear-gradient(135deg,#0B4D4A 0%,#1a3a6b 50%,#3a1a6b 100%)}
 .shop-card-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
 .shop-card-badge{
@@ -298,6 +303,21 @@ section{padding:6rem 3rem}
   padding:0.65rem 1.3rem;text-decoration:none;transition:background 0.2s;
 }
 .shop-bundle-btn:hover{background:var(--white)}
+.shop-bundle-card-premium{
+  background:linear-gradient(135deg,#1a1a2e,#0d0d18);
+  border:1px solid rgba(232,216,168,0.3) !important;
+  position:relative;
+}
+.shop-bundle-card-premium::before{
+  content:'BEST VALUE';
+  position:absolute;top:-10px;left:2rem;
+  background:#e8d8a8;color:#1a1a2e;
+  font-size:0.62rem;font-weight:700;letter-spacing:0.1em;
+  padding:0.25rem 0.75rem;
+}
+.shop-bundle-card-premium .shop-bundle-price-num{color:#e8d8a8}
+.shop-bundle-card-premium .shop-bundle-btn{background:#e8d8a8;color:#1a1a2e}
+.shop-bundle-card-premium .shop-bundle-btn:hover{background:#f5ecd8}
 @media(max-width:768px){
   .shop-bundle-card{grid-template-columns:1fr;text-align:center;gap:1rem}
   .shop-bundle-price{text-align:center}
@@ -755,16 +775,88 @@ footer{
           </div>
         </div>
       </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-jobseeker">💼</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 4 · For Job Seekers</div>
+          <div class="shop-card-title">The Job Seeker's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for resumes, cover letters, interview prep, salary negotiation, and career pivots.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$9</div>
+            <a href="https://pritasharma.gumroad.com/l/bixbt" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-smallbiz">🏪</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 5 · For Business Owners</div>
+          <div class="shop-card-title">The Small Business Owner's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for marketing, customer service, pricing strategy, hiring, and finance.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$17</div>
+            <a href="https://pritasharma.gumroad.com/l/xrlxa" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-manager">🧭</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 6 · For New Managers</div>
+          <div class="shop-card-title">The New Manager's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for 1:1s, difficult conversations, performance reviews, and managing up.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$17</div>
+            <a href="https://pritasharma.gumroad.com/l/aswox" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-senior">🌻</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 7 · For Seniors</div>
+          <div class="shop-card-title">The Senior's Guide to AI</div>
+          <p class="shop-card-desc">A patient, step-by-step guide to health, money, WhatsApp, calendar, and travel — no tech jargon.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$9</div>
+            <a href="https://pritasharma.gumroad.com/l/REPLACE_SENIOR_LINK" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-realestate">🏡</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 8 · For Real Estate Agents</div>
+          <div class="shop-card-title">The Real Estate Agent's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for listings, client communication, negotiation, and lead follow-up.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$17</div>
+            <a href="https://pritasharma.gumroad.com/l/tsxvxp" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
       <div class="shop-bundle-card">
         <div class="shop-bundle-icon">📦</div>
         <div>
-          <div class="shop-bundle-title">The Complete Bundle — All 3 Cheatsheets</div>
-          <div class="shop-bundle-desc">150 prompts total. Get all three guides together and save.</div>
+          <div class="shop-bundle-title">The Original Collection — Mom + Teacher + Student</div>
+          <div class="shop-bundle-desc">150 prompts total. Get all three foundational guides together and save.</div>
         </div>
         <div class="shop-bundle-price">
           <span class="shop-bundle-price-old">$27</span>
           <span class="shop-bundle-price-num">$19</span>
           <a href="https://pritasharma.gumroad.com/l/cpscg" target="_blank" rel="noopener" class="shop-bundle-btn">Get the Bundle →</a>
+        </div>
+      </div>
+      <div class="shop-bundle-card shop-bundle-card-premium">
+        <div class="shop-bundle-icon">⭐</div>
+        <div>
+          <div class="shop-bundle-title">The Complete Collection — All 8 Cheatsheets</div>
+          <div class="shop-bundle-desc">400+ prompts. Every guide, every life stage — our best value.</div>
+        </div>
+        <div class="shop-bundle-price">
+          <span class="shop-bundle-price-old">$96</span>
+          <span class="shop-bundle-price-num">$59</span>
+          <a href="https://pritasharma.gumroad.com/l/vbxab" target="_blank" rel="noopener" class="shop-bundle-btn">Get the Bundle →</a>
         </div>
       </div>
     </div>
