@@ -245,6 +245,45 @@ section{padding:6rem 3rem}
 .venture-subtitle{font-size:0.75rem;color:var(--teal-pale);font-style:italic;font-family:var(--serif);margin-bottom:0.65rem}
 .venture-desc{font-size:0.8rem;color:var(--slate-pale);line-height:1.72}
 
+.apps{background:var(--off-white)}
+.apps-inner{max-width:1200px;margin:0 auto}
+.apps-header{margin-bottom:3rem}
+.apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.app-card{
+  background:var(--white);border:1px solid var(--silver-pale);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;
+}
+.app-card:hover{border-color:var(--teal-muted);transform:translateY(-4px);box-shadow:0 12px 32px rgba(11,77,74,0.1)}
+.app-card-banner{
+  height:120px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.app-card-banner.ac-review{background:linear-gradient(135deg,#1a6b67,#0d4a47)}
+.app-card-banner.ac-therapist{background:linear-gradient(135deg,#5a2e6b,#321a47)}
+.app-card-banner-icon{font-size:2.8rem;position:relative;z-index:2}
+.app-live-badge{
+  position:absolute;top:0.9rem;right:0.9rem;
+  background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);
+  color:white;font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.25rem 0.65rem;display:flex;align-items:center;gap:0.35rem;
+}
+.app-live-dot{width:6px;height:6px;border-radius:50%;background:#7ee787;display:inline-block;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.4}}
+.app-card-body{padding:1.6rem;display:flex;flex-direction:column;flex:1}
+.app-card-category{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-soft);margin-bottom:0.5rem}
+.app-card-title{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:var(--text-dark);margin-bottom:0.6rem;line-height:1.3}
+.app-card-desc{font-size:0.85rem;color:var(--slate);line-height:1.65;margin-bottom:1.4rem;flex:1}
+.app-card-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.app-card-tags{display:flex;gap:0.4rem;flex-wrap:wrap}
+.app-card-tag{font-size:0.62rem;font-weight:600;color:var(--slate-light);border:1px solid var(--silver-pale);padding:0.15rem 0.55rem}
+.app-card-btn{
+  font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--white);background:var(--teal-deep);
+  padding:0.65rem 1.2rem;text-decoration:none;transition:background 0.2s;white-space:nowrap;
+}
+.app-card-btn:hover{background:var(--teal-soft)}
+
 .shop{background:var(--white)}
 .shop-inner{max-width:1200px;margin:0 auto}
 .shop-header{margin-bottom:3rem}
@@ -267,6 +306,9 @@ section{padding:6rem 3rem}
 .shop-card-banner.sc-manager{background:linear-gradient(135deg,#5a1a4a,#3d0d31)}
 .shop-card-banner.sc-senior{background:linear-gradient(135deg,#a8552e,#4d240f)}
 .shop-card-banner.sc-realestate{background:linear-gradient(135deg,#1a2438,#080b14)}
+.shop-card-banner.sc-scrummaster{background:linear-gradient(135deg,#1a4a4a,#081a1a)}
+.shop-card-banner.sc-productowner{background:linear-gradient(135deg,#1a2a6b,#080b28)}
+.shop-card-banner.sc-engmanager{background:linear-gradient(135deg,#1f3a3a,#080f0e)}
 .shop-card-banner.sc-bundle{background:linear-gradient(135deg,#0B4D4A 0%,#1a3a6b 50%,#3a1a6b 100%)}
 .shop-card-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
 .shop-card-badge{
@@ -405,6 +447,7 @@ footer{
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#apps">Apps</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#wevolve">wEvolve</a></li>
     <li><a href="#contact" class="nav-cta">Work Together</a></li>
@@ -731,12 +774,60 @@ footer{
   </div>
 </section>
 
+<section class="apps" id="apps">
+  <div class="apps-inner">
+    <div class="apps-header fade-up">
+      <div class="section-label">Live Apps &amp; Tools</div>
+      <h2 class="section-heading">Things I've <em>shipped and deployed</em></h2>
+      <p class="section-sub">Full-stack AI products, built end-to-end — from architecture to deployment. Click through and try them yourself.</p>
+    </div>
+    <div class="apps-grid fade-up">
+      <div class="app-card">
+        <div class="app-card-banner ac-review">
+          <div class="app-live-badge"><span class="app-live-dot"></span>Live</div>
+          <div class="app-card-banner-icon">⭐</div>
+        </div>
+        <div class="app-card-body">
+          <div class="app-card-category">AI · SaaS · Reputation Management</div>
+          <div class="app-card-title">Review Responder</div>
+          <p class="app-card-desc">An AI-powered dashboard that automatically drafts brand-aligned responses to customer reviews — saving small business owners hours of reputation management every week.</p>
+          <div class="app-card-footer">
+            <div class="app-card-tags">
+              <span class="app-card-tag">AI Automation</span>
+              <span class="app-card-tag">Dashboard</span>
+            </div>
+            <a href="https://pritas-review-responder.vercel.app/dashboard" target="_blank" rel="noopener" class="app-card-btn">Launch App →</a>
+          </div>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-card-banner ac-therapist">
+          <div class="app-live-badge"><span class="app-live-dot"></span>Live</div>
+          <div class="app-card-banner-icon">💬</div>
+        </div>
+        <div class="app-card-body">
+          <div class="app-card-category">AI · Wellness · Conversational</div>
+          <div class="app-card-title">Resilience AI</div>
+          <p class="app-card-desc">A supportive AI chat companion designed to help people process thoughts and build emotional resilience through guided, judgment-free conversation.</p>
+          <div class="app-card-footer">
+            <div class="app-card-tags">
+              <span class="app-card-tag">Conversational AI</span>
+              <span class="app-card-tag">Wellness</span>
+            </div>
+            <a href="https://resilience-ai-801590267572.us-west1.run.app/" target="_blank" rel="noopener" class="app-card-btn">Launch App →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="shop" id="shop">
   <div class="shop-inner">
     <div class="shop-header fade-up">
       <div class="section-label">AI Made Simple Series</div>
       <h2 class="section-heading">Cheatsheets that actually <em>save you time</em></h2>
-      <p class="section-sub">50 advanced, ready-to-use ChatGPT prompts per guide — engineered with real context, not generic advice. Instant PDF download.</p>
+      <p class="section-sub">50 advanced, ready-to-use ChatGPT prompts per guide — engineered with real context, not generic advice. 11 guides covering work, business, and life. Instant PDF download.</p>
     </div>
     <div class="shop-grid fade-up">
       <div class="shop-card">
@@ -818,8 +909,8 @@ footer{
           <div class="shop-card-title">The Senior's Guide to AI</div>
           <p class="shop-card-desc">A patient, step-by-step guide to health, money, WhatsApp, calendar, and travel — no tech jargon.</p>
           <div class="shop-card-footer">
-            <div class="shop-card-price">$9</div>
-            <a href="https://pritasharma.gumroad.com/l/REPLACE_SENIOR_LINK" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+            <div class="shop-card-price">$12</div>
+            <a href="https://pritasharma.gumroad.com/l/xnpkk" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
           </div>
         </div>
       </div>
@@ -835,6 +926,42 @@ footer{
           </div>
         </div>
       </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-scrummaster">🔄</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 9 · For Scrum Masters</div>
+          <div class="shop-card-title">The Scrum Master's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for ceremonies, retrospectives, team coaching, and difficult conversations.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$12</div>
+            <a href="https://pritasharma.gumroad.com/l/gcozyq" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-productowner">🧩</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 10 · For Product Owners</div>
+          <div class="shop-card-title">The Product Owner's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for prioritization, backlog clarity, stakeholder alignment, and roadmaps.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$12</div>
+            <a href="https://pritasharma.gumroad.com/l/eqarv" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner sc-engmanager">⚙️</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 11 · For Engineering Managers</div>
+          <div class="shop-card-title">The Engineering Manager's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for technical 1:1s, code review culture, and architecture decisions.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$17</div>
+            <a href="https://pritasharma.gumroad.com/l/jjwoh" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
       <div class="shop-bundle-card">
         <div class="shop-bundle-icon">📦</div>
         <div>
@@ -847,11 +974,23 @@ footer{
           <a href="https://pritasharma.gumroad.com/l/cpscg" target="_blank" rel="noopener" class="shop-bundle-btn">Get the Bundle →</a>
         </div>
       </div>
+      <div class="shop-bundle-card">
+        <div class="shop-bundle-icon">💼</div>
+        <div>
+          <div class="shop-bundle-title">The Professional Collection — Job Seeker + Manager + Business + Real Estate</div>
+          <div class="shop-bundle-desc">200 prompts total. The career & business essentials, bundled and discounted.</div>
+        </div>
+        <div class="shop-bundle-price">
+          <span class="shop-bundle-price-old">$60</span>
+          <span class="shop-bundle-price-num">$31</span>
+          <a href="https://pritasharma.gumroad.com/l/dxdvug" target="_blank" rel="noopener" class="shop-bundle-btn">Get the Bundle →</a>
+        </div>
+      </div>
       <div class="shop-bundle-card shop-bundle-card-premium">
         <div class="shop-bundle-icon">⭐</div>
         <div>
-          <div class="shop-bundle-title">The Complete Collection — All 8 Cheatsheets</div>
-          <div class="shop-bundle-desc">400+ prompts. Every guide, every life stage — our best value.</div>
+          <div class="shop-bundle-title">The Complete Collection — Every AI Cheatsheet</div>
+          <div class="shop-bundle-desc">400+ prompts. Every guide, every role and life stage — our best value.</div>
         </div>
         <div class="shop-bundle-price">
           <span class="shop-bundle-price-old">$96</span>
