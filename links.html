@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Prita Sharma — AI Made Simple</title>
+<meta name="description" content="TPM · AI App Builder · 14 AI cheatsheets for real people with real jobs. Shop, portfolio, and coaching in one place."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:#0d1322;
+  color:#f0ede8;
+  min-height:100vh;
+  padding:0 0 3rem;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* BG subtle grain texture via svg */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(26,58,107,0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(11,77,74,0.3) 0%, transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 1.25rem}
+
+/* HEADER */
+.header{text-align:center;padding:2.75rem 0 1.5rem}
+.avatar-ring{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,#0B4D4A,#1a2a6b);
+  margin:0 auto 1.1rem;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.2rem;
+  border:2px solid rgba(255,255,255,0.12);
+}
+.name{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:700;
+  color:#fff;margin-bottom:.25rem;letter-spacing:-.01em;
+}
+.title-line{
+  font-size:.75rem;font-weight:400;
+  color:rgba(255,255,255,.45);
+  letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:.85rem;
+}
+.tagline{
+  font-size:.92rem;font-weight:300;
+  color:rgba(255,255,255,.7);
+  line-height:1.6;max-width:320px;margin:0 auto;
+}
+.tagline strong{color:#9be0e0;font-weight:500}
+
+/* VOLUME CHIPS — the signature element */
+.chips-label{
+  font-size:.63rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);
+  text-align:center;margin:2rem 0 .75rem;
+}
+.chips{
+  display:flex;flex-wrap:wrap;gap:.45rem;
+  justify-content:center;margin-bottom:.5rem;
+}
+.chip{
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.6rem;font-weight:700;color:rgba(255,255,255,.9);
+  cursor:default;transition:transform .15s;
+  border:1px solid rgba(255,255,255,.12);
+}
+.chip:hover{transform:scale(1.15)}
+
+/* MAIN LINKS */
+.links{display:flex;flex-direction:column;gap:.75rem;margin:2rem 0}
+
+.link-card{
+  display:flex;align-items:center;gap:1rem;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  padding:1rem 1.25rem;
+  text-decoration:none;
+  color:#f0ede8;
+  transition:background .15s,border-color .15s,transform .12s;
+  cursor:pointer;
+}
+.link-card:hover{
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.22);
+  transform:translateY(-1px);
+}
+.link-card:active{transform:translateY(0)}
+
+.link-icon{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.link-text{flex:1;min-width:0}
+.link-title{
+  font-size:.9rem;font-weight:500;
+  color:#fff;margin-bottom:.15rem;
+}
+.link-sub{
+  font-size:.75rem;font-weight:300;
+  color:rgba(255,255,255,.5);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.link-arrow{
+  font-size:.85rem;color:rgba(255,255,255,.3);
+  flex-shrink:0;transition:color .15s,transform .15s;
+}
+.link-card:hover .link-arrow{color:rgba(255,255,255,.7);transform:translateX(2px)}
+
+/* Featured badge */
+.link-card.featured{
+  background:linear-gradient(135deg,rgba(11,77,74,.45),rgba(26,42,107,.45));
+  border-color:rgba(155,224,224,.25);
+}
+.link-card.featured .link-title{color:#9be0e0}
+
+/* Section divider */
+.section-divider{
+  display:flex;align-items:center;gap:.75rem;
+  margin:1.75rem 0 1rem;
+}
+.section-divider span{
+  font-size:.65rem;font-weight:600;letter-spacing:.15em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);white-space:nowrap;
+}
+.section-divider::before,.section-divider::after{
+  content:'';flex:1;height:1px;
+  background:rgba(255,255,255,.08);
+}
+
+/* CHEATSHEET GRID — compact product links */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.5rem}
+.grid-card{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.75rem .85rem;
+  border:1px solid rgba(255,255,255,.07);
+  text-decoration:none;color:#f0ede8;
+  transition:border-color .15s,background .15s;
+  font-size:.78rem;
+}
+.grid-card:hover{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
+.grid-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.grid-title{line-height:1.3;color:rgba(255,255,255,.8)}
+
+/* Bundle card */
+.bundle-card{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.25rem;
+  border:1px solid rgba(212,184,122,.3);
+  background:rgba(212,184,122,.06);
+  text-decoration:none;color:#f0ede8;
+  margin-top:.5rem;
+  transition:background .15s;
+}
+.bundle-card:hover{background:rgba(212,184,122,.12)}
+.bundle-label{
+  font-size:.63rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:#d4b87a;margin-bottom:.2rem;
+}
+.bundle-title{font-size:.88rem;font-weight:500;color:#fff}
+.bundle-price{
+  margin-left:auto;flex-shrink:0;
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:700;color:#d4b87a;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;margin-top:2.5rem;
+  font-size:.72rem;color:rgba(255,255,255,.22);
+  line-height:1.8;
+}
+.footer a{color:rgba(155,224,224,.5);text-decoration:none}
+.footer a:hover{color:#9be0e0}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="avatar-ring">✦</div>
+    <div class="name">Prita Sharma</div>
+    <div class="title-line">Sr. Staff TPM · AI App Builder · San Diego</div>
+    <p class="tagline">I build <strong>AI tools for real people</strong> — 14 cheatsheets, 2 live apps, and a coaching practice.</p>
+  </div>
+
+  <!-- VOLUME CHIPS -->
+  <div class="chips-label">14 guides · every role covered</div>
+  <div class="chips">
+    <div class="chip" style="background:#0B4D4A" title="Busy Mom">1</div>
+    <div class="chip" style="background:#1a3a6b" title="Teacher">2</div>
+    <div class="chip" style="background:#3a1a6b" title="Student">3</div>
+    <div class="chip" style="background:#9a4a1a" title="Job Seeker">4</div>
+    <div class="chip" style="background:#2d4a1a" title="Small Business">5</div>
+    <div class="chip" style="background:#5a1a4a" title="New Manager">6</div>
+    <div class="chip" style="background:#a8552e" title="Seniors">7</div>
+    <div class="chip" style="background:#1a2438" title="Real Estate">8</div>
+    <div class="chip" style="background:#1a4a4a" title="Scrum Master">9</div>
+    <div class="chip" style="background:#1a2a6b" title="Product Owner">10</div>
+    <div class="chip" style="background:#1f3a3a" title="Eng Manager">11</div>
+    <div class="chip" style="background:#5a2e6b" title="Exec Assistant">12</div>
+    <div class="chip" style="background:#0d4a4a" title="HR & People Ops">13</div>
+    <div class="chip" style="background:#8a4a1a" title="Recruiter">14</div>
+  </div>
+
+  <!-- MAIN LINKS -->
+  <div class="links">
+
+    <a href="https://pritasharma.gumroad.com/" target="_blank" rel="noopener" class="link-card featured">
+      <div class="link-icon" style="background:linear-gradient(135deg,#0B4D4A,#1a2a6b)">🛍️</div>
+      <div class="link-text">
+        <div class="link-title">Shop — AI Cheatsheets</div>
+        <div class="link-sub">14 guides · $9–$17 · Instant PDF download</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a href="https://pritas.github.io/portfolio" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon" style="background:rgba(255,255,255,.08)">🌐</div>
+      <div class="link-text">
+        <div class="link-title">Portfolio & Consulting</div>
+        <div class="link-sub">TPM · AI Apps · wEvolve Coaching</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a href="https://pritas-review-responder.vercel.app/dashboard" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon" style="background:rgba(26,74,74,.5)">⭐</div>
+      <div class="link-text">
+        <div class="link-title">Review Responder — Live App</div>
+        <div class="link-sub">AI-powered review response tool</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a href="https://resilience-ai-801590267572.us-west1.run.app/" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon" style="background:rgba(90,30,107,.5)">💬</div>
+      <div class="link-text">
+        <div class="link-title">Resilience AI — Live App</div>
+        <div class="link-sub">Supportive AI wellness chat</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/pritasharma" target="_blank" rel="noopener" class="link-card">
+      <div class="link-icon" style="background:rgba(26,58,107,.5)">in</div>
+      <div class="link-text">
+        <div class="link-title">Connect on LinkedIn</div>
+        <div class="link-sub">Sr. Staff TPM · Open to consulting & FT</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+  </div>
+
+  <!-- CHEATSHEET GRID -->
+  <div class="section-divider"><span>Browse by role</span></div>
+
+  <div class="grid">
+    <a href="https://pritasharma.gumroad.com/l/titmxx" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#0B4D4A"></div>
+      <div class="grid-title">Busy Mom</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/uxdyd" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#1a3a6b"></div>
+      <div class="grid-title">Teacher</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/svlmxd" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#3a1a6b"></div>
+      <div class="grid-title">Student</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/bixbt" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#9a4a1a"></div>
+      <div class="grid-title">Job Seeker</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/xrlxa" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#2d4a1a"></div>
+      <div class="grid-title">Small Business</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/aswox" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#5a1a4a"></div>
+      <div class="grid-title">New Manager</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/xnpkk" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#a8552e"></div>
+      <div class="grid-title">Seniors Guide</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/tsxvxp" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#1a2438"></div>
+      <div class="grid-title">Real Estate</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/gcozyq" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#1a4a4a"></div>
+      <div class="grid-title">Scrum Master</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/eqarv" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#1a2a6b"></div>
+      <div class="grid-title">Product Owner</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/jjwoh" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#1f3a3a"></div>
+      <div class="grid-title">Eng Manager</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/lxbjfs" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#5a1a30"></div>
+      <div class="grid-title">Exec Assistant</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/ruenxa" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#0d4a4a"></div>
+      <div class="grid-title">HR & People Ops</div>
+    </a>
+    <a href="https://pritasharma.gumroad.com/l/ozdij" target="_blank" rel="noopener" class="grid-card">
+      <div class="grid-dot" style="background:#8a4a1a"></div>
+      <div class="grid-title">Recruiter</div>
+    </a>
+  </div>
+
+  <!-- BUNDLES -->
+  <a href="https://pritasharma.gumroad.com/l/cpscg" target="_blank" rel="noopener" class="bundle-card" style="margin-top:.5rem">
+    <div>
+      <div class="bundle-label">3-pack · Save $8</div>
+      <div class="bundle-title">Original Collection — Mom + Teacher + Student</div>
+    </div>
+    <div class="bundle-price">$19</div>
+  </a>
+
+  <a href="https://pritasharma.gumroad.com/l/vbxab" target="_blank" rel="noopener" class="bundle-card" style="margin-top:.5rem;border-color:rgba(212,184,122,.5);background:rgba(212,184,122,.1)">
+    <div>
+      <div class="bundle-label">Best value · Save $96+</div>
+      <div class="bundle-title">Complete Collection — All 14 guides</div>
+    </div>
+    <div class="bundle-price">$59</div>
+  </a>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Prita Sharma · San Diego, CA</p>
+    <p><a href="https://pritas.github.io/portfolio">pritas.github.io/portfolio</a> · <a href="https://pritasharma.gumroad.com">pritasharma.gumroad.com</a></p>
+  </div>
+
+</div>
+</body>
+</html>

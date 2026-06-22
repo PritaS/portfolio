@@ -48,6 +48,34 @@ nav{
 .nav-cta{color:var(--teal-deep)!important;background:var(--silver-light);padding:0.4rem 1.2rem;transition:background 0.2s}
 .nav-cta:hover{background:var(--white)!important}
 
+.start-bar{
+  background:linear-gradient(135deg,#0B4D4A,#1a2a6b);
+  padding:.75rem 1.5rem;
+  display:flex;align-items:center;justify-content:center;
+  gap:1rem;flex-wrap:wrap;text-align:center;
+}
+.start-bar-text{
+  font-size:.78rem;font-weight:400;color:rgba(255,255,255,.85);
+  letter-spacing:.02em;
+}
+.start-bar-text strong{color:#9be0e0;font-weight:600}
+.start-bar-links{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+.start-bar-link{
+  font-size:.72rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;
+  padding:.35rem .9rem;
+  border:1px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.9);
+  transition:background .15s,border-color .15s;
+  white-space:nowrap;
+}
+.start-bar-link:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.55)}
+.start-bar-link.primary{
+  background:rgba(155,224,224,.18);
+  border-color:rgba(155,224,224,.45);
+  color:#9be0e0;
+}
+.start-bar-link.primary:hover{background:rgba(155,224,224,.3)}
 .hero{
   min-height:100vh;background:var(--teal-deep);
   display:flex;align-items:center;position:relative;overflow:hidden;padding-top:64px;
@@ -438,6 +466,17 @@ footer{
 </style>
 </head>
 <body>
+
+<!-- START HERE ANNOUNCEMENT BAR -->
+<div class="start-bar">
+  <div class="start-bar-text">
+    <strong>New:</strong> 14 AI cheatsheets — 50 advanced ChatGPT prompts each, for every role and life stage
+  </div>
+  <div class="start-bar-links">
+    <a href="#shop" class="start-bar-link primary">Browse the Shop</a>
+    <a href="https://pritasharma.gumroad.com/" target="_blank" rel="noopener" class="start-bar-link">Gumroad Store</a>
+  </div>
+</div>
 
 <nav>
   <a href="#" class="nav-brand">Prita Sharma</a>
@@ -956,6 +995,42 @@ footer{
           </div>
         </div>
       </div>
+      <div class="shop-card">
+        <div class="shop-card-banner" style="background:linear-gradient(135deg,#5a1a30,#1f0610)">🗂️</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 12 · For Executive Assistants</div>
+          <div class="shop-card-title">The Executive Assistant's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for writing in their voice, calendar management, travel, and board support.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$12</div>
+            <a href="https://pritasharma.gumroad.com/l/lxbjfs" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner" style="background:linear-gradient(135deg,#0d4a4a,#04181a)">🧑‍💼</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 13 · For HR & People Ops</div>
+          <div class="shop-card-title">The HR & People Ops AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for hiring, PIPs, policy writing, investigations, and offboarding.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$17</div>
+            <a href="https://pritasharma.gumroad.com/l/ruenxa" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
+      <div class="shop-card">
+        <div class="shop-card-banner" style="background:linear-gradient(135deg,#8a4a1a,#321a08)">🎯</div>
+        <div class="shop-card-body">
+          <div class="shop-card-badge">Vol. 14 · For Recruiters</div>
+          <div class="shop-card-title">The Recruiter's AI Cheatsheet</div>
+          <p class="shop-card-desc">50 prompts for outreach, job postings, candidate comms, offers, and closing.</p>
+          <div class="shop-card-footer">
+            <div class="shop-card-price">$12</div>
+            <a href="https://pritasharma.gumroad.com/l/ozdij" target="_blank" rel="noopener" class="shop-card-btn">Get It →</a>
+          </div>
+        </div>
+      </div>
       <div class="shop-bundle-card">
         <div class="shop-bundle-icon">📦</div>
         <div>
@@ -983,11 +1058,11 @@ footer{
       <div class="shop-bundle-card shop-bundle-card-premium">
         <div class="shop-bundle-icon">⭐</div>
         <div>
-          <div class="shop-bundle-title">The Complete Collection — Every AI Cheatsheet</div>
-          <div class="shop-bundle-desc">400+ prompts. Every guide, every role and life stage — our best value.</div>
+          <div class="shop-bundle-title">The Complete Collection — All 14 Cheatsheets</div>
+          <div class="shop-bundle-desc">550+ prompts. Every guide, every role, every life stage — our best value.</div>
         </div>
         <div class="shop-bundle-price">
-          <span class="shop-bundle-price-old">$96</span>
+          <span class="shop-bundle-price-old">$155+</span>
           <span class="shop-bundle-price-num">$59</span>
           <a href="https://pritasharma.gumroad.com/l/vbxab" target="_blank" rel="noopener" class="shop-bundle-btn">Get the Bundle →</a>
         </div>
